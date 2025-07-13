@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lead Conversion Prediction</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Lead Conversion Predictor</h2>
+    <form action="/predict" method="post">
+        <input type="number" name="Age" placeholder="Age" required />
+        <select name="Gender" required>
+            <option value="" disabled selected hidden>Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <select name="LeadSource" required>
+            <option value="" disabled selected hidden>Select Lead Source</option>
+            <option value="Email">Email</option>
+            <option value="Social Media">Social Media</option>
+            <option value="Referral">Referral</option>
+            <option value="Organic">Organic</option>
+        </select>
+        <input type="number" name="TimeSpent" placeholder="Time Spent (minutes)" required />
+        <input type="number" name="PagesViewed" placeholder="Pages Viewed" required />
+        <input type="number" name="EmailSent" placeholder="Email Sent" required />
+        <select name="DeviceType" required>
+            <option value="" disabled selected hidden>Select Device Type</option>
+            <option value="Mobile">Mobile</option>
+            <option value="Desktop">Desktop</option>
+            <option value="Tablet">Tablet</option>
+        </select>
+        <input type="number" name="FormSubmissions" placeholder="Form Submissions" required />
+        <input type="number" name="Downloads" placeholder="Downloads" required />
+        <input type="number" step="any" name="CTR_ProductPage" placeholder="CTR Product Page" required />
+        <input type="number" name="ResponseTime" placeholder="Response Time (hours)" required />
+        <input type="number" name="FollowUpEmails" placeholder="Follow-Up Emails" required />
+        <input type="number" name="SocialMediaEngagement" placeholder="Social Media Engagement" required />
+        <select name="PaymentHistory" required>
+            <option value="" disabled selected hidden>Select Payment History</option>
+            <option value="Good">Good</option>
+            <option value="No Payment">No Payment</option>
+        </select>
+        <textarea name="query" placeholder="Enter user query or comment" rows="4" required></textarea>
+        <button type="submit">Predict</button>
+    </form>
+
+</form>
+
+    <div id="loading" style="display: none;">Generating...</div>
+    <div class="result" id="resultBox"></div>
+</body>
+<script src="script.js"></script>
+</html>
